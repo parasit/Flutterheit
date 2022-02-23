@@ -1,16 +1,13 @@
 # flutterheit
+A Flutter client for DrGezunheit (another RPG related Go project). 
 
-Flutter client for DrGezunheit
+It's (will be) a user friendly Game Master helper with monsters, players, npc, items, etc. databases, dices thrower,  and any other tools which helps to play Pen&Paper RPGs.
 
-## Getting Started
+## a little explanation
+This project is created as an exercise to help me learn Flutter and Dart. Expect bugs and strange solutions.
+Remember I'm just learning :)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
