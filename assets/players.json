@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Johny",
+        "class": "Fighter",
+        "STR": "21"
+      
+    },
+    {
+        "name": "Ada",
+        "class": "Mage",
+        "STR": "9"
+    }
+]
