@@ -48,7 +48,7 @@ class FilterMonsterListPageState extends State<FilterMonsterListPage> {
 
   Widget buildSearch() => SearchBar(
         text: query,
-        hintText: 'Title or Author Name',
+        hintText: 'Monster Name',
         onChanged: searchMonster,
       );
 

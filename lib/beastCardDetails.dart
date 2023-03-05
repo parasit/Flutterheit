@@ -44,9 +44,7 @@ class BeastCardDetails extends StatelessWidget {
                   MyTextColumn(title: "STR", value: beast.str + beast.str_mod),
                   MyTextColumn(title: "DEX", value: beast.dex + beast.dex_mod),
                   MyTextColumn(title: "CON", value: beast.con + beast.con_mod),
-                  MyTextColumn(
-                      title: "INT",
-                      value: beast.inteligence + beast.inteligence_mod),
+                  MyTextColumn(title: "INT", value: beast.inteligence + beast.inteligence_mod),
                   MyTextColumn(title: "WIS", value: beast.wis + beast.wis_mod),
                   MyTextColumn(title: "CON", value: beast.cha + beast.cha_mod),
                 ],
@@ -55,10 +53,20 @@ class BeastCardDetails extends StatelessWidget {
               MyTextRow(title: "Senses ", value: beast.senses),
               MyTextRow(title: "Languages ", value: beast.languages),
               MyTextRow(title: "Challenge ", value: beast.challenge),
+              MyTextRow(title: "Saving throws ", value: beast.savingThrows),
+              MyTextRow(title: "Damage resistances ", value: beast.damageResistances),
+              MyTextRow(title: "Damage immunities ", value: beast.damageImmunities),
+              MyTextRow(title: "Condition immunities ", value: beast.conditionImmunities),
+              const Text("Traits", style: TextStyle(fontWeight: FontWeight.bold)),
               Html(data: beast.traits),
+              const Text("Actions", style: TextStyle(fontWeight: FontWeight.bold)),
               Html(data: beast.actions),
-              Html(data: beast.legendaryActions),
-              Image.network(beast.img_url),
+              if (beast.legendaryActions != '')
+                const Text("Legendary actions",
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                Html(data: beast.legendaryActions),
+              if (beast.img_url != '')
+                Image.network(beast.img_url),
             ]),
           ),
         ),
@@ -79,12 +87,15 @@ class MyTextRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        Text(value)
-      ],
-    );
+    if (value != '') {
+      return Row(
+        children: [
+          Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(value)
+        ],
+      );
+    }
+    return Container();
   }
 }
 

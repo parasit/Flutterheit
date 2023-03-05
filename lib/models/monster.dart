@@ -24,6 +24,9 @@ class Monster {
   final String cha;
   final String cha_mod;
   final String savingThrows;
+  final String damageImmunities;
+  final String conditionImmunities;
+  final String damageResistances;
   final String skills;
   final String senses;
   final String languages;
@@ -51,6 +54,9 @@ class Monster {
     required this.cha,
     required this.cha_mod,
     required this.savingThrows,
+    required this.damageImmunities,
+    required this.conditionImmunities,
+    required this.damageResistances,
     required this.skills,
     required this.senses,
     required this.languages,
@@ -79,7 +85,10 @@ class Monster {
         'WIS_mod': wis_mod,
         'CHA': cha,
         'CHA_mod': cha_mod,
-        'SavingThrows': savingThrows,
+        'Saving Throws': savingThrows,
+        'Damage Immunities': damageImmunities,
+        'Condition Immunities': conditionImmunities,
+        'Damage Resistances': damageResistances,
         'Skills': skills,
         'Senses': senses,
         'Languages': languages,
@@ -108,20 +117,23 @@ class Monster {
         wis_mod: json["WIS_mod"] ?? '',
         cha: json["CHA"] ?? '',
         cha_mod: json["CHA_mod"] ?? '',
-        savingThrows: json["SavingThrows"] ?? '',
+        savingThrows: json["Saving Throws"] ?? '',
+        damageImmunities: json["Damage Immunities"] ?? '',
+        conditionImmunities: json["Condition Immunities"] ?? '',
+        damageResistances: json['Damage Resistances'] ?? '',
         skills: json["Skills"] ?? '',
         senses: json["Senses"] ?? '',
         languages: json["Languages"] ?? '',
         challenge: json["Challenge"] ?? '',
         traits: json["Traits"] ?? '',
         actions: json["Actions"] ?? '',
-        legendaryActions: json["LegendaryActions"] ?? '',
+        legendaryActions: json["Legendary Actions"] ?? '',
         img_url: json["img_url"] ?? '',
       );
 
   @override
   String toString() {
-    return 'Monster(name: $name, meta: $meta, Armor Class: $armorClass, Hit Points: $hitPoints, Speed: $speed, STR: $str, STR_mod: $str_mod, DEX: $dex, DEX_mod: $dex_mod, CON: $con, CON_mod: $con_mod, INT: $int, INT_mod: $inteligence_mod, WIS: $wis, WIS_mod: $wis_mod, CHA: $cha, CHA_mod: $cha_mod, SavingThrows: $savingThrows, Skills: $skills, Senses: $senses, Languages: $languages, Challenge: $challenge, Traits: $traits, Actions: $actions, LegendaryActions: $legendaryActions, img_url: $img_url)';
+    return 'Monster(name: $name, meta: $meta, Armor Class: $armorClass, Hit Points: $hitPoints, Speed: $speed, STR: $str, STR_mod: $str_mod, DEX: $dex, DEX_mod: $dex_mod, CON: $con, CON_mod: $con_mod, INT: $int, INT_mod: $inteligence_mod, WIS: $wis, WIS_mod: $wis_mod, CHA: $cha, CHA_mod: $cha_mod, SavingThrows: $savingThrows,Damage Immunities: $damageImmunities, Condition Immunities: $conditionImmunities, Resistances: $damageResistances, Skills: $skills, Senses: $senses, Languages: $languages, Challenge: $challenge, Traits: $traits, Actions: $actions, LegendaryActions: $legendaryActions, img_url: $img_url)';
   }
 
   @override
@@ -147,6 +159,9 @@ class Monster {
         other.cha == cha &&
         other.cha_mod == cha_mod &&
         other.savingThrows == savingThrows &&
+        other.damageImmunities == damageImmunities &&
+        other.conditionImmunities == conditionImmunities &&
+        other.damageResistances == damageResistances &&
         other.skills == skills &&
         other.senses == senses &&
         other.languages == languages &&
@@ -177,6 +192,9 @@ class Monster {
         cha.hashCode ^
         cha_mod.hashCode ^
         savingThrows.hashCode ^
+        damageImmunities.hashCode ^
+        conditionImmunities.hashCode ^
+        damageResistances.hashCode ^
         skills.hashCode ^
         senses.hashCode ^
         languages.hashCode ^
